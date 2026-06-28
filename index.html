@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda Acadêmica – DAMAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<section class="agenda-section">
+
+  <div class="agenda-header">
+    <div class="agenda-header-text">
+      <p class="agenda-eyebrow">DAMAS · FAMENE</p>
+      <h2 class="agenda-title">Agenda Acadêmica</h2>
+      <p class="agenda-subtitle">Acompanhe congressos, jornadas, workshops, simpósios e demais eventos científicos.</p>
+    </div>
+    <div class="agenda-logo">
+      <img src="logo-damas.png" alt="Logo DAMAS" onerror="this.style.display='none'"/>
+    </div>
+  </div>
+
+  <div class="agenda-grid" id="agenda-grid">
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Carregando eventos...</p>
+    </div>
+  </div>
+
+  <div class="agenda-footer">
+    <a href="agenda-completa.html" class="btn-agenda-completa" id="btn-completa">
+      🗓️ VER AGENDA COMPLETA &rsaquo;
+    </a>
+    <p class="agenda-footer-sub">Confira todos os eventos programados</p>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
