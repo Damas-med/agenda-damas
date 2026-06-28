@@ -1,15 +1,8 @@
-/* ============================================
-   AGENDA ACADÊMICA – DAMAS/FAMENE
-   Paleta: Verde escuro #1A3D2B | Dourado #C9A84C
-   Fundo: #F5F3EE (creme institucional)
-   ============================================ */
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --verde:    #1A3D2B;
   --verde-md: #2A5C40;
-  --verde-lt: #E8F0EB;
   --dourado:  #C9A84C;
   --fundo:    #F5F3EE;
   --branco:   #FFFFFF;
@@ -27,7 +20,6 @@ body {
   color: var(--verde);
 }
 
-/* ── SEÇÃO ── */
 .agenda-section {
   max-width: 960px;
   margin: 0 auto;
@@ -72,18 +64,20 @@ body {
 /* ── GRID ── */
 .agenda-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: 55% 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 12px;
+  align-items: stretch;
 }
 
-/* ── CARD PRINCIPAL (hero) ── */
+/* ── CARD HERO ── */
 .card-hero {
   grid-column: 1;
   grid-row: 1 / 4;
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  min-height: 380px;
+  min-height: 460px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -100,7 +94,7 @@ body {
 .card-hero:hover .card-hero-img { transform: scale(1.04); }
 .card-hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,30,18,.92) 55%, rgba(10,30,18,.15) 100%);
+  background: linear-gradient(to top, rgba(10,30,18,.93) 50%, rgba(10,30,18,.10) 100%);
 }
 .card-hero-body {
   position: relative;
@@ -136,7 +130,7 @@ body {
 }
 .card-hero-titulo {
   font-family: var(--font-display);
-  font-size: clamp(20px, 3vw, 26px);
+  font-size: clamp(22px, 3vw, 28px);
   line-height: 1.25;
   margin-bottom: 12px;
 }
@@ -153,7 +147,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -171,10 +165,10 @@ body {
   background: var(--branco);
   border-radius: var(--radius);
   box-shadow: var(--sombra);
-  padding: 11px 14px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   cursor: pointer;
   transition: box-shadow .18s, transform .18s;
   text-decoration: none;
@@ -183,7 +177,7 @@ body {
 }
 .card-secundario:hover { box-shadow: 0 6px 20px rgba(26,61,43,.14); transform: translateY(-2px); }
 .card-sec-icon {
-  width: 40px; height: 40px;
+  width: 42px; height: 42px;
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   font-size: 18px;
@@ -193,27 +187,27 @@ body {
 .card-sec-tag {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 10px;
+  gap: 4px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: .09em;
   text-transform: uppercase;
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: 20px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .card-sec-titulo {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.3;
   color: var(--verde);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .card-sec-meta {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--cinza1);
   display: flex;
   flex-direction: column;
@@ -221,7 +215,7 @@ body {
 }
 .card-sec-meta span { display: flex; align-items: center; gap: 4px; }
 .card-sec-arrow {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--cinza2);
   flex-shrink: 0;
   transition: color .15s;
@@ -232,32 +226,24 @@ body {
 .cat-congresso .card-sec-tag { background: #FDF3D8; color: #92620A; }
 .cat-congresso .card-sec-icon { background: #FDF3D8; }
 .cat-congresso { border-left-color: #C9A84C; }
-
 .cat-simposio .card-sec-tag { background: #EEF2FF; color: #3730A3; }
 .cat-simposio .card-sec-icon { background: #EEF2FF; }
 .cat-simposio { border-left-color: #4F46E5; }
-
 .cat-jornada .card-sec-tag { background: #F5F3FF; color: #6B21A8; }
 .cat-jornada .card-sec-icon { background: #F5F3FF; }
 .cat-jornada { border-left-color: #9333EA; }
-
 .cat-workshop .card-sec-tag { background: #F0FDF4; color: #14532D; }
 .cat-workshop .card-sec-icon { background: #F0FDF4; }
 .cat-workshop { border-left-color: #16A34A; }
-
 .cat-curso .card-sec-tag { background: #FFF7ED; color: #9A3412; }
 .cat-curso .card-sec-icon { background: #FFF7ED; }
 .cat-curso { border-left-color: #EA580C; }
-
 .cat-palestra .card-sec-tag { background: #F0F9FF; color: #075985; }
 .cat-palestra .card-sec-icon { background: #F0F9FF; }
 .cat-palestra { border-left-color: #0EA5E9; }
 
 /* ── RODAPÉ ── */
-.agenda-footer {
-  text-align: center;
-  margin-top: 28px;
-}
+.agenda-footer { text-align: center; margin-top: 20px; }
 .btn-agenda-completa {
   display: inline-flex;
   align-items: center;
@@ -266,7 +252,7 @@ body {
   font-weight: 700;
   letter-spacing: .10em;
   text-transform: uppercase;
-  padding: 14px 36px;
+  padding: 13px 36px;
   border-radius: 40px;
   border: 2px solid var(--verde);
   color: var(--verde);
@@ -275,18 +261,15 @@ body {
   transition: all .18s;
 }
 .btn-agenda-completa:hover { background: var(--verde); color: var(--branco); }
-.agenda-footer-sub {
-  margin-top: 8px;
-  font-size: 12px;
-  color: var(--cinza1);
-}
+.agenda-footer-sub { margin-top: 8px; font-size: 12px; color: var(--cinza1); }
 
-/* ── LOADING ── */
-.loading-state {
+/* ── LOADING / EMPTY ── */
+.loading-state, .empty-state {
   grid-column: 1 / -1;
   text-align: center;
   padding: 60px 20px;
   color: var(--cinza1);
+  font-size: 15px;
 }
 .spinner {
   width: 36px; height: 36px;
@@ -297,14 +280,6 @@ body {
   margin: 0 auto 16px;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-
-.empty-state {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--cinza1);
-  font-size: 15px;
-}
 
 /* ── RESPONSIVO ── */
 @media (max-width: 700px) {
