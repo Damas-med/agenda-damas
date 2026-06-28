@@ -18,6 +18,7 @@ body {
   font-family: var(--font-body);
   background: var(--fundo);
   color: var(--verde);
+  overflow-x: hidden;
 }
 
 .agenda-section {
@@ -64,7 +65,7 @@ body {
 /* ── GRID ── */
 .agenda-grid {
   display: grid;
-  grid-template-columns: 55% 1fr;
+  grid-template-columns: 55% minmax(0, 1fr);
   grid-template-rows: repeat(3, auto);
   gap: 12px;
   align-items: stretch;
@@ -202,9 +203,9 @@ body {
   line-height: 1.3;
   color: var(--verde);
   margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  word-break: break-word;
 }
 .card-sec-meta {
   font-size: 11px;
